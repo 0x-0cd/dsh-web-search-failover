@@ -1,0 +1,43 @@
+{
+  "name": "dsh-web-search-failover",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DeepSeek Harness (dsh) web_search provider: Exa primary with the official DeepSeek search provider as an automatic fallback.",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "web-search",
+    "exa",
+    "deepseek",
+    "failover"
+  ],
+  "license": "MIT",
+  "author": "0x-0cd",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0x-0cd/dsh-web-search-failover.git"
+  },
+  "homepage": "https://github.com/0x-0cd/dsh-web-search-failover#readme",
+  "bugs": {
+    "url": "https://github.com/0x-0cd/dsh-web-search-failover/issues"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4",
+    "@deepseek-ai/dsh-launch-environment": "0.1.7-rc.2",
+    "@deepseek-ai/dsh-web": "0.1.7-rc.2",
+    "@deepseek-ai/dsh-web-search-deepseek": "0.1.7-rc.2",
+    "@deepseek-ai/dsh-web-search-exa": "0.1.7-rc.2"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.18.4"
+  }
+}

@@ -1,0 +1,24 @@
+# Example profile patch for dsh-web-search-failover.
+#
+# Append this to $DSH_HOME/profiles/web/cordis.patch.yml (keep any rows you
+# already have). A patch replaces a row's whole `config`, so the `web` override
+# below restates `fetchProvider` — never drop that line.
+#
+# Install the packages first:
+#   dsh plugin --profile web add @deepseek-ai/dsh-web-search-exa@<runtime-version>
+#   dsh plugin --profile web add github:0x-0cd/dsh-web-search-failover
+
+- insert:
+    - id: web-search-failover
+      name: dsh-web-search-failover
+      config:
+        # Every field has a default; the knobs are documented in the README.
+        exaSearchType: auto # auto | keyword | neural
+        # exaBaseURL: https://api.exa.ai
+        # exaNumResults: 8
+        # deepseekApiKeyEnv: DEEPSEEK_API_KEY
+- id: web
+  name: '@deepseek-ai/dsh-web'
+  config:
+    searchProvider: exa-deepseek
+    fetchProvider: http
