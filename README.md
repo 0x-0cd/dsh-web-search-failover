@@ -50,6 +50,9 @@ When the DeepSeek leg answers, it still records the official `web/deepseek-searc
 dsh plugin --profile web add github:0x-0cd/dsh-web-search-failover
 ```
 
+A git install runs whatever the repository publishes, so pin a revision when you want a fixed one:
+`dsh plugin --profile web add github:0x-0cd/dsh-web-search-failover#v0.1.0`.
+
 The package deliberately declares **no `dsh.bundle`**, so it installs as a plain dependency (the CLI prints `declares no dsh.bundle — installed as a plain dependency, not a profile layer`; that is expected) and you mount its row from the profile patch. Mount the Exa provider too, then pin the seam to the failover provider:
 
 ```sh

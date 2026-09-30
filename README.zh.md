@@ -50,6 +50,9 @@ FailoverSearchProvider  (本插件)
 dsh plugin --profile web add github:0x-0cd/dsh-web-search-failover
 ```
 
+git 安装会拉取仓库当前发布的内容，想固定版本就 pin 一个 tag 或 commit：
+`dsh plugin --profile web add github:0x-0cd/dsh-web-search-failover#v0.1.0`。
+
 本包刻意**不声明 `dsh.bundle`**，因此以普通依赖安装（CLI 会打印 `declares no dsh.bundle — installed as a plain dependency, not a profile layer`，这是预期行为），再由 profile patch 挂载它的行。同时装上 Exa provider，然后把接缝钉到 failover provider：
 
 ```sh
